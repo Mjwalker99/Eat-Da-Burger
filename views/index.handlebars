@@ -1,0 +1,51 @@
+{{!-- add burger form and button --}}
+<div class="row">
+	<div class="center col-sm-12">
+		<h2>Add A Burger Of Your Choosing To The List Below</h2>
+		<form action="/api/burgers" method="POST">
+			<input type="text" id="ca" name="burger_name" placeholder="enter a burger">
+			<button class="btn-primary" type="submit">Add Burger</button>
+		</form>
+	</div>
+</div>
+
+{{!-- burgers listings --}}
+<main>
+	<div class="container">
+		<div class="row">
+			{{!-- burgers to devour --}}
+			<ul>
+				<div class="col-sm-6">
+					<br>
+					<h2>Burgers You Can Eat!</h2>
+					{{#each burgers}} {{#unless this.devoured}}
+					<li>
+						<div>
+							{{this.burger_name}}
+							<form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+								<input type="hidden" name="devoured" value="true">
+								<button class="btn-primary" type="submit">Devour It!</button>
+							</form>
+						</div>
+					</li>
+					{{/unless}} {{/each}}
+				</div>
+			</ul>
+			{{!-- devoured burgers --}}
+			<ul>
+				<div class="col-sm-6">
+					<br>
+					<h2>Sorry, these burgers were already Eaten!</h2>
+					{{#each burgers}} {{#if this.devoured}}
+
+					<li>
+						{{this.burger_name}}
+					</li>
+
+					{{/if}} {{/each}}
+				</div>
+			</ul>
+		</div>
+	</div>
+</main>
+<br>

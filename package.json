@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Mjwalker99/Eat-Da-Burger/issues"
   },
-  "homepage": "https://github.com/Mjwalker99/Eat-Da-Burger#readme"
+  "homepage": "https://github.com/Mjwalker99/Eat-Da-Burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "require": "^2.4.20"
+  }
 }
