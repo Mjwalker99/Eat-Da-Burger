@@ -1,0 +1,26 @@
+h1{
+text-align: center;
+}
+
+ img{
+margin-left: 45%;
+
+ }
+
+#avail{
+    float: left;
+    margin-right: 6%;
+    margin-left: 10%;
+
+}
+
+#devoured{
+float: right;
+margin-right: 10%;
+}
+
+#add{
+clear: both;
+margin-left: 40%;
+}
+
